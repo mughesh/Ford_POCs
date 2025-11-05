@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd11a3435d8dd5340bb060d03f8bfb3e, type: 3}
+  m_Name: AnimationObjectsHolder
+  m_EditorClassIdentifier: 
+  recordedClips:
+  - {fileID: 7400000, guid: dad657c1e81b2204e8fa6903429b8a6d, type: 2}
+  - {fileID: 7400000, guid: 8792de2f769593849b63b35e945ce97d, type: 2}

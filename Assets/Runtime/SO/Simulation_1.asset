@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19916d2a18f43534d92584154df63180, type: 3}
+  m_Name: Simulation_1
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  Tasks:
+  - TaskID:
+      ID: GrabHoodStruct_Main
+    Description: Follow the directional arrow. Obtain the hood strut from the bin.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 9f017898467b95b47af060279cb870e5, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: InstallHoodStruct_Main
+    Description: Install the hood strut to the fender and hood. Confirm proper seating
+      and upper connection.
+    SubTasks:
+    - TaskID:
+        ID: PlaceHoodStruct
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: PushHoodStruct_Bottom
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: PushHoodStruct_Top
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 3e850103d17f11648b79a0637487f5c8, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: ConnectHardshell_Main
+    Description: 'Connect the hardshell to the hood strut using the push - click
+      - push method. '
+    SubTasks:
+    - TaskID:
+        ID: PlugHardshell
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: PushHardshell
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 7b6e0ccce31eb6748ad5c7c19f9ee1cc, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Obtain_Bolts_Main
+    Description: Follow the directional arrow. Obtain 3 bolts from the bin individually.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 48f99cc2cf6b78b4d9b60d86fd679e28, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Tighten_3_bolts_Main
+    Description: Hand Start 3 Bolts to Waterfall. Turning each Bolt 3 complete clockwise
+      rotations.
+    SubTasks:
+    - TaskID:
+        ID: Tighten_3_bolts_1
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Tighten_3_bolts_2
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Tighten_3_bolts_3
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 67beacc7a22f9e74294d12310aff98e6, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: CloseFrunk_Main
+    Description: Close Frunk, with hands as close to the center as possible.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 61815baa233214a45af14f8a96bf425a, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Grab Grommet_Main
+    Description: Obtain the grommet from the bin.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 1fbfbecd5115a6647b5312d08199cfeb, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Place Grommet_Main
+    Description: Install 1 headlight grommet to the fender reinforcement.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: e0e70d8fbffe6a248a535b1d430893f5, type: 3}
+    audioDelay: 0
+    isCompleted: 0

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cafee26368219489185209d9ab3378, type: 3}
+  m_Name: TaskDatabase
+  m_EditorClassIdentifier: 
+  TaskIDs:
+  - Intro_Main
+  - PPEKit_Main
+  - GrabHoodStruct_Main
+  - PlaceHoodStruct
+  - PushHoodStruct_Top
+  - InstallHoodStruct_Main
+  - PlugHardshell
+  - PushHardshell
+  - ConnectHardshell_Main
+  - Grab Grommet_Main
+  - Place Grommet_Main
+  - CloseFrunk_Main
+  - Grab_Scanner
+  - Grab_Highmount
+  - Scan_Highmount
+  - Scan_HighMount_Main
+  - Install_HighMount_Main
+  - Screw_HighMount_Main
+  - Screw_HighMount_1
+  - Screw_HighMount_2
+  - Screw_HighMount_3
+  - Screw_HighMount_4
+  - Cycle_AGV_Main
+  - Obtain_Bolts_Main
+  - Obtain_TwoHandedPowerTool_Main
+  - Tighten_3_bolts_Main
+  - Tighten_3_bolts_1
+  - Tighten_3_bolts_2
+  - Tighten_3_bolts_3
+  - Tighten_3_bolts_Tool_Main
+  - Tighten_3_bolts_Tool_1
+  - Tighten_3_bolts_Tool_2
+  - Tighten_3_bolts_Tool_3
+  - Grab_Nutrunner_Main
+  - PushHoodStruct_Bottom
+  - Grab_HighMount_Screws_Main

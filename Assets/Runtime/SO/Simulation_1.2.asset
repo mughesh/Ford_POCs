@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19916d2a18f43534d92584154df63180, type: 3}
+  m_Name: Simulation_1.2
+  m_EditorClassIdentifier: 
+  sequenceNumber: 1
+  Tasks:
+  - TaskID:
+      ID: Scan_HighMount_Main
+    Description: Obtain the scanner and the high mount. Scan the barcode on the harness
+      of the high mount.
+    SubTasks:
+    - TaskID:
+        ID: Grab_Scanner
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Grab_Highmount
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Scan_Highmount
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 5984a07bf8404b84f833f08bb91d6a6d, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Install_HighMount_Main
+    Description: Install the high mount onto the sheet metal at the back of the cab.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 018e85df7744fa14681e714286471ee3, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Screw_HighMount_Main
+    Description: Obtain and finger-start four screws, turning each screw three complete
+      clockwise rotations.
+    SubTasks:
+    - TaskID:
+        ID: Grab_HighMount_Screws_Main
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_1
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_2
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_3
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_4
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 742b5626462bd5a4bab0eef597365214, type: 3}
+    audioDelay: 0
+    isCompleted: 0

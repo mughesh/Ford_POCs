@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d5e1c36b663f845809ff20d2fba801, type: 3}
+  m_Name: Builder
+  m_EditorClassIdentifier: 
+  versionSystem: {fileID: 11400000, guid: 30a437d58e14ddf4ca7eb055a0df9a93, type: 2}
+  buildName: FordAssembly_V2
+  pathDB: {fileID: 11400000, guid: 32858919c73a7b74582e1b03aac25188, type: 2}
+  preBuilders:
+  - {fileID: 11400000, guid: 183a6b27b0173dd49964671ee63654f3, type: 2}
+  - {fileID: 11400000, guid: 059cda15eaef7e340a433e4e4bdc9608, type: 2}
+  postBuilders: []
+  currentVersion: 1.25110421
