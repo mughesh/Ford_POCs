@@ -93,6 +93,47 @@ MonoBehaviour:
     audioDelay: 0
     isCompleted: 0
   - TaskID:
+      ID: Grab_NutRunner_Main
+    Description: Obtain the two-handed power tool from the bin.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: f95e081dd3f17b749b75e7c8e044486a, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Tighten_3_bolts_Tool_1
+    Description: "Align the power tool spindle on Bolt 1 at the Waterfall\u2013Hood
+      joint, support the top housing with your other hand, and press the trigger
+      to tighten."
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 5fc09c318ee97934c8b3907a04e81ac6, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Tighten_3_bolts_Tool_Main
+    Description: Follow the directional arrow and tighten Bolts 2 and 3 using the
+      same method.
+    SubTasks:
+    - TaskID:
+        ID: Tighten_3_bolts_Tool_2
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Tighten_3_bolts_Tool_3
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 490d73cdce031f64dac36a0d3f29f687, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Nutrunner_Placement
+    Description: Place the two-handed power tool back in the bin.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 2bebb3dab832fa3458aaebf593498d04, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
       ID: CloseFrunk_Main
     Description: Close Frunk, with hands as close to the center as possible.
     SubTasks: []
