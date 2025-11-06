@@ -16,6 +16,7 @@ MonoBehaviour:
     keys:
     - 99c9720ab356a0642a771bea13969a05
     - aeecf2324ad45cd4781c5da04580100a
+    - 678c80f8c686d9744ae459edb8aebde6
     values:
     - goDatas_byGlobalId:
         keys: []
@@ -23,3 +24,9 @@ MonoBehaviour:
     - goDatas_byGlobalId:
         keys: []
         values: []
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-678c80f8c686d9744ae459edb8aebde6-31965555-0
+        values:
+        - colorIndex: 2
+          iconNameOrGuid: Folder Icon
