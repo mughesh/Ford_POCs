@@ -16,6 +16,21 @@ MonoBehaviour:
   Tasks:
   - TaskID:
       ID: S2_01_RemoveTicket
+    Description: 'Remove the Tele-auto ticket from the instrument panel, then discard
+      it. '
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_02_TeleportToIPTool
+    Description: Click the Teleport button below to move near the IP decking tool
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_03_UnlockKnob
     Description: 
     SubTasks: []
     AudioClip: {fileID: 0}
