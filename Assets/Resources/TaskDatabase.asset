@@ -52,3 +52,16 @@ MonoBehaviour:
   - Grab_NutRunner_Main
   - Nutrunner_Function
   - Nutrunner_Placement
+  - SeatCameraWire_Top_Main
+  - PushTopwires_Main
+  - PushTopwires_1
+  - PushTopwires_2
+  - CameraHardSheel_Main
+  - CameraHardSheel_Place
+  - CameraHardSheel_Plug
+  - pushBottomWires_Main
+  - pushBottomWires_1
+  - pushBottomWires_2
+  - Grab_Nut_Box_1
+  - Grab_Nut_Box_2
+  - S2_01_RemoveTicket

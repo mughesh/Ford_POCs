@@ -44,6 +44,7 @@ public class TaskManager : MonoBehaviour
     {
         TaskEvents.OnTaskCompleted += TaskEvents_OnTaskCompleted;
         TaskEvents.OnAllTasksCompleted += TaskEvents_OnAllTasksCompleted;
+
         Populate();
     }
 
@@ -218,6 +219,7 @@ public class TaskManager : MonoBehaviour
     IEnumerator PlayAudio(AudioClip clip, float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+        //if (clip == null || !TaskEvents.canPlayAudio) yield break;
         if (clip == null) yield break;
         taskAudioSource.clip = clip;
         taskAudioSource.Play();

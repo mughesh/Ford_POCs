@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class InteractablePosReseter : MonoBehaviour
 {
+    [SerializeField] PlacePoint goTo;
+
+    [Header("This is unsafe use only when needed")]
+    public bool setLayer;
+    [HideInInspector] public bool disableReset;
+
     Vector3 pos;
     Vector3 rot;
     Rigidbody rb;
     Coroutine coroutine;
     Grabbable grabbable;
     bool isDetecting;
-    [SerializeField] PlacePoint goTo;
     private void Awake()
     {
         grabbable = GetComponent<Grabbable>();
@@ -23,28 +28,20 @@ public class InteractablePosReseter : MonoBehaviour
         pos = transform.position;
         rot = transform.localEulerAngles;
     }
-    private void OnEnable()
-    {
-        grabbable.onRelease.AddListener(StartDetecting);
-    }
-    private void OnDisable()
-    {
-        grabbable.onRelease.RemoveListener(StartDetecting);
-    }
-    private void StartDetecting(Hand arg0, Grabbable arg1)
-    {
-        isDetecting = true;
-    }
+
+    private void OnEnable() => grabbable.onRelease.AddListener(StartDetecting);
+    private void OnDisable() => grabbable.onRelease.RemoveListener(StartDetecting);
+    private void StartDetecting(Hand arg0, Grabbable arg1) => isDetecting = true;
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log($"ColliderCheck:{gameObject.name} Collider with {collision.gameObject.name}");
+        if (disableReset) return;
+
         if (collision.transform.CompareTag("Ground"))
             OnUnGrab();
+
         if (collision.transform.CompareTag("Table") && isDetecting)
             OnUnGrab();
-       /* if (collision.transform.CompareTag("Table") && goTo != null)
-            OnUnGrab();*/
     }
     public void OnUnGrab()
     {
@@ -53,10 +50,12 @@ public class InteractablePosReseter : MonoBehaviour
     }
     public void ManualReset()
     {
-        if (rb == null) rb = GetComponent<Rigidbody>();
-        
+        if (disableReset) return;
 
-        if(goTo!=null)
+        if (rb == null)
+            rb = GetComponent<Rigidbody>();
+
+        if (goTo != null)
         {
             goTo.makePlacedKinematic = true;
             goTo.disableRigidbodyOnPlace = false;
@@ -72,8 +71,10 @@ public class InteractablePosReseter : MonoBehaviour
             rb.useGravity = true;
             rb.isKinematic = false;
         }
-            
-       
+
+        if (setLayer)
+            gameObject.layer = LayerMask.NameToLayer("Grabbable");
+
         isDetecting = false;
     }
     IEnumerator DelayReset()

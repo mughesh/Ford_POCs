@@ -2,12 +2,17 @@ using System;
 using UnityEngine;
 public static class TaskEvents
 {
+    public static bool canPlayAudio;
+    public static event Action<Transform, GuideArrowAxis> OnLookAt;
+    public static event Action OnStopLookAtArrow;
+
+    public static event Action<bool> OnArrowState;
+
     public static event Action<TaskID> OnTaskActive;
     public static event Action<TaskID> OnTaskCompleted;
     public static event Action<TaskID> OnTaskPreCompleted;
     public static event Action<int> OnAllTasksCompleted;
-    public static event Action<Transform, GuideArrowAxis> OnLookAt;
-    public static event Action OnStopLookAtArrow;
+
     public static event Action<float> OnProgressUpdate;
     public static event Action<Transform, bool> OnProgressUpdateTransform;
     public static void StartTask(TaskID taskID) => OnTaskActive?.Invoke(taskID);
@@ -17,6 +22,7 @@ public static class TaskEvents
     public static void LootAt(Transform obj, GuideArrowAxis guideArrowAxis) => OnLookAt?.Invoke(obj, guideArrowAxis);
 
     public static void StopLookAtArrow() => OnStopLookAtArrow?.Invoke();
+    public static void SetArrowState(bool state) => OnArrowState?.Invoke(state);
     public static void AllTasksCompleted(int listID) => OnAllTasksCompleted?.Invoke(listID);
     public static void UpdateProgressBar(float progress)
     {

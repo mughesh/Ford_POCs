@@ -13,12 +13,14 @@ public class Screw : MonoBehaviour
     [SerializeField] GrabbablePose rotatingPose;
     [SerializeField] PlacePoint ignorepoint;
     [SerializeField] Transform screwPlace;
-
+    [SerializeField] InteractablePosReseter posReseter;
 
 
     public Vector2 rotationLimits;
     public int rotatecount;
     public float tolerance = 1f;
+    public bool isHandTightened;
+    public bool isToolTightened;
 
     private int currentcount;
     private Rigidbody rb;
@@ -34,6 +36,7 @@ public class Screw : MonoBehaviour
     private float normalized;
     public event Action OnPlacedEvent;
     public event Action OnTightened;
+    public event Action OnToolTightened;
     public void OnEnable()
     {
         Grabbable.OnPlacePointAddEvent += OnPlaced;
@@ -41,7 +44,12 @@ public class Screw : MonoBehaviour
         Grabbable.onRelease.AddListener(IncreaseGrabCount);
         rb = GetComponent<Rigidbody>();
     }
-
+    public void OnDisable()
+    {
+        Grabbable.OnPlacePointAddEvent -= OnPlaced;
+        Grabbable.onGrab.RemoveListener(Grabbed);
+        Grabbable.onRelease.RemoveListener(IncreaseGrabCount);
+    }
     private void Grabbed(Hand arg0, Grabbable arg1)
     {
         isGrabbed = true;
@@ -73,6 +81,7 @@ public class Screw : MonoBehaviour
             Destroy(joint);
             Destroy(GetComponent<Rigidbody>());
             transform.SetParent(parentTo);
+            isHandTightened = true;
             OnTightened?.Invoke();
             rb = null;
             joint = null;
@@ -81,19 +90,15 @@ public class Screw : MonoBehaviour
         }
     }
 
-    public void OnDisable()
-    {
-        Grabbable.OnPlacePointAddEvent -= OnPlaced;
-        Grabbable.onGrab.RemoveListener(Grabbed);
-        Grabbable.onRelease.RemoveListener(IncreaseGrabCount);
-    }
+
     private void OnPlaced(PlacePoint point, Grabbable grabbable)
     {
-        if (isPlaced) return;
-        if (point == ignorepoint) return;
+        if (isPlaced || point == ignorepoint) return;
         if (point.placeRadius > 0.01)
         {
             SetJoint(Vector2.zero);
+            grabbable.handType = HandType.both;
+            posReseter.disableReset = true;
             pickPose.poseEnabled = false;
             rotatingPose.poseEnabled = true;
             isPlaced = true;
@@ -107,6 +112,7 @@ public class Screw : MonoBehaviour
     {
         if (joint == null)
             joint = gameObject.AddComponent<HingeJoint>();
+        joint.enablePreprocessing = false;
         joint.anchor = Vector3.zero;
         joint.useLimits = true;
         limits = joint.limits;
@@ -114,17 +120,32 @@ public class Screw : MonoBehaviour
         limits.max = Jointlimits.y;
         limits.bounceMinVelocity = 0f;
         joint.limits = limits;
-
     }
 
     private void Update()
     {
         if (!isPlaced || !isGrabbed || joint == null)
             return;
-        float angle = Mathf.Abs(joint.angle);
-        if (angle > 90f)
-            angle -= 180f;
-       // Debug.Log("JointAngle: " + angle);
+
+
+        if (rb.angularVelocity.magnitude > tolerance)
+        {
+            normalized = ((float)currentcount + 1) / rotatecount;
+            TaskEvents.UpdateProgressBar(normalized);
+            lastAngle = 0f;
+            totalRotation = 0f;
+            rb.angularVelocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
+            isRotated = true;
+        }
+
+
+            float angle = Mathf.Abs(joint.angle);
+        //Debug.Log("Angle: " + angle);
+        if (angle > 100f)
+            angle -= 90f;
+
+        // Debug.Log("JointAngle: " + angle);
 
         float delta = Math.Abs(angle - lastAngle);
         lastAngle = angle;
@@ -134,14 +155,14 @@ public class Screw : MonoBehaviour
         float targetDegrees = currentcount * 75f;
         //float normalized = Mathf.Clamp01(totalRotation / targetDegrees);
         //Debug.Log("Currentcount" + currentcount);
-        if (totalRotation > tolerance)
+        /*if (totalRotation > tolerance)
         {
             normalized = ((float)currentcount + 1) / rotatecount;
             TaskEvents.UpdateProgressBar(normalized);
             lastAngle = 0f;
             totalRotation = 0f;
             isRotated = true;
-        }
+        }*/
 
         /*if (progressBar)
             progressBar.fillAmount = Mathf.Lerp(progressBar.fillAmount, normalized, Time.deltaTime * 10f);*/
@@ -182,6 +203,8 @@ public class Screw : MonoBehaviour
 
     public void TightenByTool()
     {
-        TaskEvents.TaskCompleted(tool_TightenID);
+        isToolTightened = true;
+        OnToolTightened?.Invoke();
+        //TaskEvents.TaskCompleted(tool_TightenID);
     }
 }

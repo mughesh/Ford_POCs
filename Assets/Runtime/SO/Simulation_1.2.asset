@@ -45,9 +45,8 @@ MonoBehaviour:
     audioDelay: 0
     isCompleted: 0
   - TaskID:
-      ID: Screw_HighMount_Main
-    Description: Obtain and finger-start four screws, turning each screw three complete
-      clockwise rotations.
+      ID: Grab_Nut_Box_2
+    Description: 'Using your non-dominant hand, obtain the bolt box from the bin. '
     SubTasks:
     - TaskID:
         ID: Grab_HighMount_Screws_Main
@@ -74,6 +73,72 @@ MonoBehaviour:
       AudioClip: {fileID: 0}
       audioDelay: 0
       IsCompleted: 0
-    AudioClip: {fileID: 8300000, guid: 742b5626462bd5a4bab0eef597365214, type: 3}
+    AudioClip: {fileID: 8300000, guid: 7536518f77ef15b428c706d9fca228f9, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Grab_HighMount_Screws_Main
+    Description: 'Follow the directional arrow, obtain 4 bolts from the bolt box,
+      and insert them into the High Mount individually. '
+    SubTasks:
+    - TaskID:
+        ID: Grab_HighMount_Screws_Main
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_1
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_2
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_3
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_4
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 41d1d1a5d91116b4289476969c35abe5, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Screw_HighMount_Main
+    Description: Finger-start 4 screws, turning each screw three complete clockwise
+      rotations.
+    SubTasks:
+    - TaskID:
+        ID: Grab_HighMount_Screws_Main
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_1
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_2
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_3
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: Screw_HighMount_4
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 3449e70ae9932c145b5542d5564fe1d1, type: 3}
     audioDelay: 0
     isCompleted: 0

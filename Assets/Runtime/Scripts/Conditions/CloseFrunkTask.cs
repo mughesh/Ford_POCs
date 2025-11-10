@@ -25,6 +25,7 @@ public class CloseFrunkTask : MonoBehaviour
         rb.Sleep();
         rb.useGravity = false;
         rb.mass = 5f;
+        SetJoints(JointLimits_Half);
         gameObject.SetActive(false);
     }
     private void OnDestroy() => TaskEvents.OnTaskActive -= TaskEvents_OnTaskActive;
@@ -54,7 +55,8 @@ public class CloseFrunkTask : MonoBehaviour
     {
         if (hinge == null) return;
         float angle = hinge.angle;
-
+        if (angle > 90f)
+            angle -= 180f;
         // Detect near min limit
         bool nowAtMin = Mathf.Abs(angle - limits.min) <= tolerance;
         bool nowAtMax = Mathf.Abs(angle - limits.max) <= tolerance;

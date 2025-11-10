@@ -63,10 +63,79 @@ MonoBehaviour:
     audioDelay: 0
     isCompleted: 0
   - TaskID:
-      ID: Obtain_Bolts_Main
-    Description: Follow the directional arrow. Obtain 3 bolts from the bin individually.
+      ID: SeatCameraWire_Top_Main
+    Description: Seat the Front Camera Wire PIA to the Waterfall area.
     SubTasks: []
-    AudioClip: {fileID: 8300000, guid: 48f99cc2cf6b78b4d9b60d86fd679e28, type: 3}
+    AudioClip: {fileID: 8300000, guid: bbc987c55cb27374092b6c82fa55ea4f, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: PushTopwires_Main
+    Description: Seat the next two PIA locators of the Front Camera Harness onto
+      the Hood Inner panel.
+    SubTasks:
+    - TaskID:
+        ID: PushTopwires_1
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: PushTopwires_2
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: c92c21aecf3e00047b686607279ce53c, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: CameraHardSheel_Main
+    Description: "Pick up the Cabin-side Hardshell and connect it to the Front Camera
+      Hardshell using the Push\u2013Click\u2013Push method. "
+    SubTasks:
+    - TaskID:
+        ID: CameraHardSheel_Place
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: CameraHardSheel_Plug
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: 12e7d4ab7c5fb3b4fac1dff03a987a67, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: pushBottomWires_Main
+    Description: Seat the two PIA locators of the Cabin Harness onto the Hood Inner
+      panel.
+    SubTasks:
+    - TaskID:
+        ID: pushBottomWires_1
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    - TaskID:
+        ID: pushBottomWires_2
+      AudioClip: {fileID: 0}
+      audioDelay: 0
+      IsCompleted: 0
+    AudioClip: {fileID: 8300000, guid: ba13eefaa3254834f9752c9f38f76724, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Grab_Nut_Box_1
+    Description: Using your non-dominant hand, obtain the bolt box from the bin.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 7536518f77ef15b428c706d9fca228f9, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: Obtain_Bolts_Main
+    Description: Follow the directional arrow, obtain 3 bolts from the bolt box,
+      and insert them into the Waterfall individually.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 5b9690aef7bcbb24fb65b3d877b7d956, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:

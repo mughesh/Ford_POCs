@@ -15,7 +15,7 @@ MonoBehaviour:
   sequenceNumber: 2
   Tasks:
   - TaskID:
-      ID: Intro_Main
+      ID: S2_01_RemoveTicket
     Description: 
     SubTasks: []
     AudioClip: {fileID: 0}
