@@ -21,6 +21,10 @@ public class TaskHighlight : MonoBehaviour
     [Tooltip("Highlight scale multiplier - makes highlight slightly bigger")]
     [SerializeField] private float highlightScale = 1.02f;
 
+    [Header("Simple GameObject Mode")]
+    [Tooltip("If checked, simply enables/disables this GameObject instead of material manipulation")]
+    [SerializeField] private bool simpleGameObjectMode = false;
+
     private Material[] originalMaterials;
     private GameObject highlightObject;
     private bool isHighlighted = false;
@@ -39,14 +43,17 @@ public class TaskHighlight : MonoBehaviour
 
     private void Start()
     {
-        if (targetRenderer == null)
+        if (!simpleGameObjectMode)
         {
-            targetRenderer = GetComponent<MeshRenderer>();
-        }
+            if (targetRenderer == null)
+            {
+                targetRenderer = GetComponent<MeshRenderer>();
+            }
 
-        if (targetRenderer != null)
-        {
-            originalMaterials = targetRenderer.materials;
+            if (targetRenderer != null)
+            {
+                originalMaterials = targetRenderer.materials;
+            }
         }
 
         // Start hidden
@@ -85,16 +92,27 @@ public class TaskHighlight : MonoBehaviour
 
     private void ShowHighlight()
     {
-        if (isHighlighted || targetRenderer == null || highlightMaterial == null)
-            return;
+        // if (isHighlighted)
+        //     return;
 
-        if (addAsOverlay)
+        if (simpleGameObjectMode)
         {
-            CreateHighlightOverlay();
+            // Simple mode - just enable this GameObject
+            gameObject.SetActive(true);
         }
         else
         {
-            ReplaceHighlightMaterial();
+            if (targetRenderer == null || highlightMaterial == null)
+                return;
+
+            if (addAsOverlay)
+            {
+                CreateHighlightOverlay();
+            }
+            else
+            {
+                ReplaceHighlightMaterial();
+            }
         }
 
         isHighlighted = true;
@@ -103,16 +121,24 @@ public class TaskHighlight : MonoBehaviour
 
     private void HideHighlight()
     {
-        if (!isHighlighted)
+        if (!isHighlighted && !simpleGameObjectMode)
             return;
 
-        if (addAsOverlay && highlightObject != null)
+        if (simpleGameObjectMode)
         {
-            Destroy(highlightObject);
+            // Simple mode - just disable this GameObject
+            gameObject.SetActive(false);
         }
-        else if (targetRenderer != null && originalMaterials != null)
+        else
         {
-            targetRenderer.materials = originalMaterials;
+            if (addAsOverlay && highlightObject != null)
+            {
+                Destroy(highlightObject);
+            }
+            else if (targetRenderer != null && originalMaterials != null)
+            {
+                targetRenderer.materials = originalMaterials;
+            }
         }
 
         isHighlighted = false;

@@ -15,6 +15,10 @@ public class ToolMovementTask : Task
     [SerializeField] private Grabbable[] handles; // Handles that can be grabbed
     [SerializeField] private PhysicsGadgetButton movementButton; // The button to press
 
+    [Header("Guidance (Optional)")]
+    [Tooltip("Arrows/highlights to hide when button is pressed (not when task completes)")]
+    [SerializeField] private GameObject[] hideOnButtonPress;
+
     private bool handleGrabbed = false;
     private bool buttonPressed = false;
     private bool handleReleased = false;
@@ -79,10 +83,25 @@ public class ToolMovementTask : Task
         {
             buttonPressed = true;
             Debug.Log("Button pressed while holding handle!");
+
+            // Hide guidance immediately when button is pressed
+            HideGuidance();
         }
         else
         {
             Debug.LogWarning("You need to grab the handle first!");
+        }
+    }
+
+    private void HideGuidance()
+    {
+        foreach (var obj in hideOnButtonPress)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+                Debug.Log($"Hidden guidance: {obj.name}");
+            }
         }
     }
 
