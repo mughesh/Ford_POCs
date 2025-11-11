@@ -10,6 +10,10 @@ public class TeleportTask : Task
     [SerializeField] private Transform teleportTarget;
     [SerializeField] private Transform playerTransform;
 
+    [Header("Tracking Offset Reset (For Auto Hands)")]
+    [Tooltip("Optional: Transforms to reset to zero after teleport (TrackerOffsets, Auto Hand Player)")]
+    [SerializeField] private Transform[] resetTransformsToZero;
+
     [Header("UI - Drag the Canvas GameObject here")]
     [SerializeField] private GameObject teleportCanvasUI;
 
@@ -77,13 +81,28 @@ public class TeleportTask : Task
             return;
         }
 
-        // Teleport player
+        // Simple teleport - just set position and rotation directly
+        // This works for Auto Hands rig root transform
         playerTransform.position = teleportTarget.position;
         playerTransform.rotation = teleportTarget.rotation;
 
+        // Reset tracking offsets to zero (fixes VR tracking drift issue)
+        if (resetTransformsToZero != null && resetTransformsToZero.Length > 0)
+        {
+            foreach (var t in resetTransformsToZero)
+            {
+                if (t != null)
+                {
+                    t.localPosition = Vector3.zero;
+                    t.localRotation = Quaternion.identity;
+                }
+            }
+            Debug.Log("Reset tracking offsets to zero");
+        }
+
         hasTeleported = true;
 
-        Debug.Log($"Player teleported to: {teleportTarget.name}");
+        Debug.Log($"Player teleported to: {teleportTarget.name} at position {teleportTarget.position}");
 
         // Hide canvas
         HideTeleportCanvas();
