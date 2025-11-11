@@ -40,10 +40,24 @@ public class TaskManager : MonoBehaviour
          Instance = this;*/
         taskSequence = Instantiate(taskSequenceRef);
     }
+
+
+    private void start()
+
+    {
+        StartCoroutine(DelayedPopulate());
+    }
     private void OnEnable()
     {
         TaskEvents.OnTaskCompleted += TaskEvents_OnTaskCompleted;
         TaskEvents.OnAllTasksCompleted += TaskEvents_OnAllTasksCompleted;
+
+        StartCoroutine(DelayedPopulate());
+    }
+
+    IEnumerator DelayedPopulate()
+    {
+        yield return new WaitForSeconds(1f);
         Populate();
     }
 
@@ -58,6 +72,7 @@ public class TaskManager : MonoBehaviour
     private void OnDisable()
     {
         TaskEvents.OnTaskCompleted -= TaskEvents_OnTaskCompleted;
+        TaskEvents.OnAllTasksCompleted -= TaskEvents_OnAllTasksCompleted;
     }
     private void TaskEvents_OnTaskCompleted(TaskID obj)
     {
@@ -195,7 +210,7 @@ public class TaskManager : MonoBehaviour
                     StartNextTask();
                     return false;
                 }
-                // finished all subtasks for this main — move to next main
+                // finished all subtasks for this main ï¿½ move to next main
                 TaskEvents.TaskCompleted(currentMainTask);
                 currentSubTaskIndex = 0;
                 currentTaskIndex++;
@@ -218,6 +233,7 @@ public class TaskManager : MonoBehaviour
     IEnumerator PlayAudio(AudioClip clip, float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+        //if (clip == null || !TaskEvents.canPlayAudio) yield break;
         if (clip == null) yield break;
         taskAudioSource.clip = clip;
         taskAudioSource.Play();

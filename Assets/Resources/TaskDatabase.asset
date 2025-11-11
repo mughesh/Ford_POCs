@@ -49,3 +49,24 @@ MonoBehaviour:
   - Grab_Nutrunner_Main
   - PushHoodStruct_Bottom
   - Grab_HighMount_Screws_Main
+  - Grab_NutRunner_Main
+  - Nutrunner_Function
+  - Nutrunner_Placement
+  - SeatCameraWire_Top_Main
+  - PushTopwires_Main
+  - PushTopwires_1
+  - PushTopwires_2
+  - CameraHardSheel_Main
+  - CameraHardSheel_Place
+  - CameraHardSheel_Plug
+  - pushBottomWires_Main
+  - pushBottomWires_1
+  - pushBottomWires_2
+  - Grab_Nut_Box_1
+  - Grab_Nut_Box_2
+  - S2_01_RemoveTicket
+  - S2_02_TeleportToIPTool
+  - S2_03_UnlockKnob
+  - S2_04_RotateToolCCW
+  - S2_05_TraverseToBeam
+  - S2_06_TeleportToManipulator

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67f1a1a78d9e294d8af8b9a5ddbbc75, type: 3}
   m_Name: AppDetials
   m_EditorClassIdentifier: 
-  ProductName: FordAssembly_V2
-  PackageName: in.skillveri.fordassembly_V2
+  ProductName: FordAssembly_V6
+  PackageName: in.skillveri.fordassembly_V6
   BundleVersion: 1

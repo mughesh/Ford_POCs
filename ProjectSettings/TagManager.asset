@@ -9,6 +9,7 @@ TagManager:
   - Structloc
   - HighMount
   - Table
+  - Ticket
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Grabbable
   - Hand
   - HandPlayer
-  - 
+  - RopeAttach
   - 
   - 
   - 

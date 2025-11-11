@@ -4,7 +4,9 @@ using UnityEngine;
 public class ScrewPlacementHandler : Task
 {
     [SerializeField] PlacePoint placePoint;
+    [SerializeField] TaskID toolTightenedID;
     Screw screw;
+    [SerializeField] Vector3 finalPos;
     public override void OnEnable()
     {
         base.OnEnable();
@@ -20,6 +22,14 @@ public class ScrewPlacementHandler : Task
         screw = arg1.GetComponent<Screw>();
         if (screw == null) return;
         screw.OnTightened += TaskCompleted;
+        screw.OnToolTightened += Screw_OnToolTightened;
+    }
+
+    private void Screw_OnToolTightened()
+    {
+        screw.transform.localPosition = finalPos;
+        screw.OnToolTightened -= Screw_OnToolTightened;
+        TaskEvents.TaskCompleted(toolTightenedID);
     }
 
     private void TaskCompleted()

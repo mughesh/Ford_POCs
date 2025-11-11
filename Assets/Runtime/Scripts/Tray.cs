@@ -1,30 +1,39 @@
 using Autohand;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Tray : MonoBehaviour
 {
     [SerializeField] Grabbable Grabbable;
-    [SerializeField] GameObject parentedTray;
+    [SerializeField] GameObject parentedTrayleft, parentedTrayRight;
     [SerializeField] Renderer _renderer;
     [SerializeField] List<GameObject> forEnable, forDisable;
+    [SerializeField] List<PlacePoint> placePointsleft, placePointsright;
     private void OnEnable()
     {
-        Grabbable.onGrab.AddListener(ParentToHand);
+        Grabbable.onHighlight.AddListener(ParentToHand);
     }
     private void OnDisable()
     {
-        Grabbable.onGrab.RemoveListener(ParentToHand);
+        Grabbable.onHighlight.RemoveListener(ParentToHand);
     }
     private void ParentToHand(Hand arg0, Grabbable arg1)
     {
-        //gameObject.SetActive(false);
+        if (!_renderer.enabled) return;
         _renderer.enabled = false;
+
+        if (arg0.left)
+        {
+            placePointsleft.ForEach(x => x.enabled = true);
+            parentedTrayleft.SetActive(true);
+        }
+        else
+        {
+            placePointsright.ForEach(x => x.enabled = true);
+            parentedTrayRight.SetActive(true);
+        }
 
         forEnable.ForEach(x => x.SetActive(true));
         forDisable.ForEach(x => x.SetActive(false));
-        parentedTray.SetActive(true);
-
     }
 }

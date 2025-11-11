@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd11a3435d8dd5340bb060d03f8bfb3e, type: 3}
   m_Name: AnimationObjectsHolder
   m_EditorClassIdentifier: 
-  recordedClips:
-  - {fileID: 7400000, guid: dad657c1e81b2204e8fa6903429b8a6d, type: 2}
-  - {fileID: 7400000, guid: 8792de2f769593849b63b35e945ce97d, type: 2}
+  recordedClips: []

@@ -7,6 +7,7 @@ public class Arrow : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] List<GameObject> optional;
     bool taskPreCompleted = false;
+    bool canShow = true;
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -19,12 +20,19 @@ public class Arrow : MonoBehaviour
         TaskEvents.OnTaskActive += TaskEvents_OnTaskActive;
         TaskEvents.OnTaskCompleted += TaskEvents_OnTaskCompleted;
         TaskEvents.OnTaskPreCompleted += TaskEvents_OnTaskPreCompleted;
+        TaskEvents.OnArrowState += TaskEvents_OnArrowState;
     }
+
     private void OnDestroy()
     {
         TaskEvents.OnTaskActive -= TaskEvents_OnTaskActive;
         TaskEvents.OnTaskCompleted -= TaskEvents_OnTaskCompleted;
         TaskEvents.OnTaskPreCompleted -= TaskEvents_OnTaskPreCompleted;
+        TaskEvents.OnArrowState -= TaskEvents_OnArrowState;
+    }
+    private void TaskEvents_OnArrowState(bool obj)
+    {
+        canShow = obj;
     }
     private void TaskEvents_OnTaskActive(TaskID obj)
     {
@@ -43,6 +51,7 @@ public class Arrow : MonoBehaviour
     }
     void SetState(bool state)
     {
+        //if(!canShow) return;
         arrow.SetActive(state);
         if (optional.Count > 0)
             optional.ForEach(x => x.SetActive(state));
