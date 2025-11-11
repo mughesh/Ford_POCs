@@ -31,6 +31,30 @@ MonoBehaviour:
     isCompleted: 0
   - TaskID:
       ID: S2_03_UnlockKnob
+    Description: Rotate the lock knob counterclockwise on the Instrument Panel Manipulator
+      to unlock the IP decking tool.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_04_RotateToolCCW
+    Description: "Hold the handle, press the Rotate (\u21BA) button, then release
+      the handle to rotate the IP Decking Tool counterclockwise."
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_05_TraverseToBeam
+    Description: "Hold the handle, press the Traverse (\u2195) button, then release
+      the handle to move the IP decking tool toward the IP steel beam."
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_06_TeleportToManipulator
     Description: 
     SubTasks: []
     AudioClip: {fileID: 0}

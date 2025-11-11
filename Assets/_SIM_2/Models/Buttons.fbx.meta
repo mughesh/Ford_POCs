@@ -3,42 +3,7 @@ guid: 4da2c431a29fc6944853928261d4d0fc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color__000000ff
-    second: {fileID: 2100000, guid: 2494975bb36e02642ba6278226ca68a8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color__000000ff_1
-    second: {fileID: 2100000, guid: b7685c6789eee674ca424c9894bfae9c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color__18751dff
-    second: {fileID: 2100000, guid: 38a9af81125eaa440ab474318e52488a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color__800000ff
-    second: {fileID: 2100000, guid: b29b490c5c6d5dd40bf4436da5d1dad9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color__800000ff_1
-    second: {fileID: 2100000, guid: f7017e0d739823a42b993f53d8c68f63, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 2da29ffb5004216488421da82fddf81b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rig
-    second: {fileID: 2100000, guid: 1bfa0fc4b12d0764992854fb6593d539, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
