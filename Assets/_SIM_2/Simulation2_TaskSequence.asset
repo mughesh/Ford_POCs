@@ -69,17 +69,16 @@ MonoBehaviour:
     audioDelay: 0
     isCompleted: 0
   - TaskID:
-      ID: S2_08_EngageVLRG
-    Description: 'Press both buttons simultaneously to engage the VLRG arm of the
-      IP Decking Tool with the Instrument Panel on the carrier. '
+      ID: S2_08_TeleportToVLRGButtons
+    Description: Click the Teleport button below to move in front of the VLRG Buttons
     SubTasks: []
     AudioClip: {fileID: 0}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
-      ID: S2_09_PullToolBackward
-    Description: Hold the handles and pull the tool backward to retract the Instrument
-      Panel from the carrier.
+      ID: 'S2_09_EngageVLRG   '
+    Description: Press both buttons simultaneously to engage the VLRG arm of the
+      IP Decking Tool with the Instrument Panel on the carrier
     SubTasks: []
     AudioClip: {fileID: 0}
     audioDelay: 0

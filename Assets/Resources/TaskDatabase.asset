@@ -71,8 +71,8 @@ MonoBehaviour:
   - S2_05_TraverseToBeam
   - S2_06_TeleportToManipulator
   - S2_07_PushToolForward
-  - S2_08_EngageVLRG
-  - S2_09_PullToolBackward
+  - S2_08_TeleportToVLRGButtons
+  - 'S2_09_EngageVLRG   '
   - S2_10_TeleportToControl
   - S2_11_RotateToolCW
   - S2_12_TraverseForwardToVehicle
