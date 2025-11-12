@@ -23,10 +23,14 @@ public class ToolMovementTask : Task
     private bool buttonPressed = false;
     private bool handleReleased = false;
     private bool taskCompleted = false;
+    private bool isTaskActive = false; // NEW: Only respond when this task is active
 
     public override void OnEnable()
     {
         base.OnEnable();
+
+        // Subscribe to task events
+        TaskEvents.OnTaskActive += OnTaskActive;
 
         // Subscribe to button press
         if (movementButton != null)
@@ -49,6 +53,9 @@ public class ToolMovementTask : Task
     {
         base.OnDisable();
 
+        // Unsubscribe from task events
+        TaskEvents.OnTaskActive -= OnTaskActive;
+
         // Unsubscribe
         if (movementButton != null)
         {
@@ -65,9 +72,15 @@ public class ToolMovementTask : Task
         }
     }
 
+    // Called when any task becomes active
+    private void OnTaskActive(TaskID activeTaskID)
+    {
+        isTaskActive = (this.TaskID == activeTaskID);
+    }
+
     private void OnHandleGrabbed(Hand hand, Grabbable grabbable)
     {
-        if (taskCompleted) return;
+        if (!isTaskActive || taskCompleted) return; // NEW: Check if active
 
         handleGrabbed = true;
         handleReleased = false;
@@ -77,7 +90,7 @@ public class ToolMovementTask : Task
 
     private void OnButtonPressed()
     {
-        if (taskCompleted) return;
+        if (!isTaskActive || taskCompleted) return; // NEW: Check if active
 
         if (handleGrabbed && !handleReleased)
         {
@@ -107,7 +120,7 @@ public class ToolMovementTask : Task
 
     private void OnHandleReleased(Hand hand, Grabbable grabbable)
     {
-        if (taskCompleted) return;
+        if (!isTaskActive || taskCompleted) return; // NEW: Check if active
 
         // Check if button was pressed while holding
         if (buttonPressed && handleGrabbed)
