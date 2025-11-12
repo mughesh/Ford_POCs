@@ -58,6 +58,7 @@ public class TeleportTask : Task
         if (teleportCanvasUI != null)
         {
             teleportCanvasUI.SetActive(true);
+            OnTaskStarted?.Invoke();
             Debug.Log("Teleport canvas shown!");
         }
     }
