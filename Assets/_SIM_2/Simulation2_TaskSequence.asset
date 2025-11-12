@@ -60,3 +60,35 @@ MonoBehaviour:
     AudioClip: {fileID: 0}
     audioDelay: 0
     isCompleted: 0
+  - TaskID:
+      ID: S2_07_PushToolForward
+    Description: Hold the handles and move the IP Decking Tool forward to align the
+      end effector with the Instrument Panel carrier.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_08_EngageVLRG
+    Description: 'Press both buttons simultaneously to engage the VLRG arm of the
+      IP Decking Tool with the Instrument Panel on the carrier. '
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_09_PullToolBackward
+    Description: Hold the handles and pull the tool backward to retract the Instrument
+      Panel from the carrier.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_10_TeleportToControl
+    Description: Click the Teleport button below to move near the IP Decking Manipulator
+      control area.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
