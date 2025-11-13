@@ -80,3 +80,9 @@ MonoBehaviour:
   - S2_14_LockKnobCW
   - S2_15_SlideToolRight
   - S2_16_TeleportToControl3
+  - S2_17_RotateIShaftLiftCW
+  - S2_18_TraverseForwardSeat
+  - S2_19_RotateIShaftLiftCCW
+  - S2_20_PressOperationComplete
+  - S2_21_UnlockKnobCCW2
+  - S2_22_LockKnobCW3
