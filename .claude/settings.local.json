@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:earnest-robot.gitbook.io)"
+      "WebFetch(domain:earnest-robot.gitbook.io)",
+      "Bash(copy:*)"
     ],
     "deny": [],
     "ask": []
