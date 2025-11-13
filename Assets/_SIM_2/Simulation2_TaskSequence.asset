@@ -91,3 +91,44 @@ MonoBehaviour:
     AudioClip: {fileID: 0}
     audioDelay: 0
     isCompleted: 0
+  - TaskID:
+      ID: S2_11_RotateToolCW
+    Description: Hold the handle, press the Rotate button, then release the handle
+      to rotate the IP Decking Tool clockwise.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_12_TraverseForwardToVehicle
+    Description: Hold the handle, press the Traverse button, then release the handle
+      to move the IP Decking Tool forward and align it with the vehicle.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_13_TeleportToControl2
+    Description: Click the Teleport button below to move near the IP Decking Manipulator
+      control area.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_14_LockKnobCW
+    Description: Rotate the lock knob clockwise to lock the traverse and rotational
+      movement of the IP Decking Tool.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_15_SlideToolRight
+    Description: "Hold the handle, press the Slide (\u2194) button, then release
+      the handle to slide the IP Decking Tool to the right and align the Instrument
+      Panel inside the vehicle."
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
