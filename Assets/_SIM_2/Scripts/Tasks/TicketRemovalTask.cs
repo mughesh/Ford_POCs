@@ -13,10 +13,14 @@ public class TicketRemovalTask : Task
 
     private AudioSource audioSource;
     private bool ticketGrabbed = false;
+    private bool isTaskActive = false; // NEW: Only respond when this task is active
 
     public override void OnEnable()
     {
         base.OnEnable();
+
+        // Subscribe to task events
+        TaskEvents.OnTaskActive += OnTaskActive;
 
         // Subscribe to ticket grab event
         if (ticketGrabbable != null)
@@ -29,11 +33,20 @@ public class TicketRemovalTask : Task
     {
         base.OnDisable();
 
+        // Unsubscribe from task events
+        TaskEvents.OnTaskActive -= OnTaskActive;
+
         // Unsubscribe from events
         if (ticketGrabbable != null)
         {
             ticketGrabbable.OnGrabEvent -= OnTicketGrabbed;
         }
+    }
+
+    // Called when any task becomes active
+    private void OnTaskActive(TaskID activeTaskID)
+    {
+        isTaskActive = (this.TaskID == activeTaskID);
     }
 
     private void Start()
@@ -54,7 +67,7 @@ public class TicketRemovalTask : Task
 
     private void OnTicketGrabbed(Hand hand, Grabbable grabbable)
     {
-        if (ticketGrabbed) return;
+        if (!isTaskActive || ticketGrabbed) return; // NEW: Check if active
 
         ticketGrabbed = true;
 

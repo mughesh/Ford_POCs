@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 25fbd18dcbefc9045ba24ffe33e542f8
+guid: bfff408a2c596594e93b42198458ba79
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,38 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Color__000000ff
-    second: {fileID: 2100000, guid: e8ff362f52e264249bb2f1ba4c0de41c, type: 2}
+      name: Black Rig
+    second: {fileID: 2100000, guid: a6bf7159a25e72e4c88023f666090f87, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Color__000000ff_1
-    second: {fileID: 2100000, guid: f660a9f928bc38e4ebf330343413777a, type: 2}
+      name: Blue rig
+    second: {fileID: 2100000, guid: 3f23033229cf7724687bbd46c4c990d1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Color__18751dff
-    second: {fileID: 2100000, guid: 9b42788f5298d8c48b0736f3bd67ab93, type: 2}
+      name: Orange Rig
+    second: {fileID: 2100000, guid: 0f3237beaeb14a74f8517f658dbb6af1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Color__800000ff
-    second: {fileID: 2100000, guid: b28e00e8917827c45b31dcaf0f7caaad, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color__800000ff_1
-    second: {fileID: 2100000, guid: ebe4a0f08c09d4e42baca6ec95abbdae, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 325b6a2b21d1da548b251170ac21fc79, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rig
-    second: {fileID: 2100000, guid: fb3537665e5ee574bba7a09aff837ddb, type: 2}
+      name: White Rig
+    second: {fileID: 2100000, guid: e504a84c3b8097449a0fb4598e967ec7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

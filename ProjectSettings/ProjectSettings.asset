@@ -146,6 +146,9 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 0}
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - {fileID: 11400000, guid: 8a4d5d2800a1a2a4c8621d07f58d1acf, type: 2}
+  - {fileID: 3089831280744551457, guid: a9b028575b83dd24998f9ae3c22e5f04, type: 2}
+  - {fileID: -593073964798016157, guid: 45d1e2ae9dbd0554591d6f44cfb592f8, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -167,7 +170,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.4
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: in.skillveri.fordassembly_V6
+    Android: in.skillveri.fordassembly_Sim2
     Standalone: com.Unity-Technologies.com.unity.template.urp-blank
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
@@ -270,7 +273,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 2
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Unity Projects/skillveriuser.keystore
+  AndroidKeystoreName: C:/Users/SKILLVERI DEV/OneDrive/Desktop/skillveriuser.keystore
   AndroidKeyaliasName: skillveri
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0

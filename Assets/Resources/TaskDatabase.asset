@@ -70,3 +70,13 @@ MonoBehaviour:
   - S2_04_RotateToolCCW
   - S2_05_TraverseToBeam
   - S2_06_TeleportToManipulator
+  - S2_07_PushToolForward
+  - S2_08_TeleportToVLRGButtons
+  - 'S2_09_EngageVLRG   '
+  - S2_10_TeleportToControl
+  - S2_11_RotateToolCW
+  - S2_12_TraverseForwardToVehicle
+  - S2_13_TeleportToControl2
+  - S2_14_LockKnobCW
+  - S2_15_SlideToolRight
+  - S2_16_TeleportToControl3
