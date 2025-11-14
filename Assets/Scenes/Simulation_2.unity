@@ -15270,9 +15270,11 @@ MonoBehaviour:
   hingeJoint: {fileID: 0}
   knobRigidbody: {fileID: 1070388273}
   objectsToUnlock: []
-  animatorsToTrigger: []
-  animationTriggerName: Hook_Lock
-  animationDuration: 2
+  animatorsToTrigger:
+  - {fileID: 961907056}
+  - {fileID: 1598884619}
+  animationTriggerName: reverse
+  animationDuration: 5
   playAnimationsAfterRotation: 0
   debugTriggerAnimations: 0
   rotationSound: {fileID: 0}
@@ -24226,8 +24228,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793576144}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.106424, y: 0.054, z: 3.348}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.85, y: 0.054, z: 6.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24242,7 +24244,7 @@ Transform:
   - {fileID: 2272788859715156014}
   - {fileID: 2061228324}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1793576146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24820,31 +24822,7 @@ MonoBehaviour:
       m_Calls: []
   OnTaskCompleted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8830246018817977680}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 961907056}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnTaskPreCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -26363,7 +26341,7 @@ Transform:
   m_GameObject: {fileID: 1947727433}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.168, y: 0.103, z: 7.37}
+  m_LocalPosition: {x: 0.168, y: 0.103, z: 7.509}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28497,6 +28475,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3317636554155642833, guid: dbf128c1d07053548b7bcab81475a2c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.46
+      objectReference: {fileID: 0}
     - target: {fileID: 4077389289866594988, guid: dbf128c1d07053548b7bcab81475a2c7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -29476,6 +29458,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 221608424721113016}
     m_Modifications:
+    - target: {fileID: 3245977534017903802, guid: cb2ce894c62833a49acddc60e75d1871, type: 3}
+      propertyPath: parentOnGrab
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5173107136978398849, guid: cb2ce894c62833a49acddc60e75d1871, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0143
