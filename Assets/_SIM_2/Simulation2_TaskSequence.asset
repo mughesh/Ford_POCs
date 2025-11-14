@@ -19,7 +19,7 @@ MonoBehaviour:
     Description: 'Remove the Tele-auto ticket from the instrument panel, then discard
       it. '
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: cd6a0bd8489d4354faa02b95e3745e3a, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
