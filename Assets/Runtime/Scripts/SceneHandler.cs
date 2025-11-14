@@ -23,7 +23,13 @@ public class SceneHandler : STCLiveUI
             timeHolder.time = 0f;
         }
         if (exit)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
             Application.Quit();
+#endif
+        }
     }
 
     public void WhenUnHover() { }

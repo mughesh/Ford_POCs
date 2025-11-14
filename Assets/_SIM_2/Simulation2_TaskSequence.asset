@@ -16,33 +16,31 @@ MonoBehaviour:
   Tasks:
   - TaskID:
       ID: S2_01_RemoveTicket
-    Description: 'Remove the Tele-auto ticket from the instrument panel, then discard
-      it. '
+    Description: Follow the directional arrow. Remove the Tele-auto ticket from the
+      instrument panel, then discard it.
     SubTasks: []
     AudioClip: {fileID: 8300000, guid: cd6a0bd8489d4354faa02b95e3745e3a, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_02_TeleportToIPTool
-    Description: Click the Teleport button below to move near the IP decking tool
+    Description: Click the Teleport button below to move near the IP decking tool.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 63db838835e6bf243b74ed43c9be77f8, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_03_UnlockKnob
-    Description: Rotate the lock knob counterclockwise on the Instrument Panel Manipulator
-      to unlock the IP decking tool.
+    Description: Rotate the lock knob counterclockwise direction.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 6c6c4b75c4e5f6a4a9ff030ad0ea71e3, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_04_RotateToolCCW
-    Description: Hold the handle, press the Rotate button, then release the handle
-      to rotate the IP Decking Tool counterclockwise.
+    Description: Hold the handle and release it to rotate the IP Decking Tool counterclockwise.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 3bd2a908ac5781c4e9762ec6ea74882b, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
@@ -50,37 +48,38 @@ MonoBehaviour:
     Description: Hold the handle, press the Traverse button, then release the handle
       to move the IP decking tool toward the IP steel beam.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0d82f66fe9ea8774cb46f60cd29ba2d4, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_06_TeleportToManipulator
     Description: 'Click the Teleport button below to move in front of the IP Manipulator. '
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 23f6ad526c73b484299b68ee9bf3aa50, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_07_PushToolForward
-    Description: Hold the handles and move the IP Decking Tool forward to align the
-      end effector with the Instrument Panel carrier.
+    Description: Hold the handle and release it to move the IP Decking Tool forward
+      to align the end effector with the Instrument Panel.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: e5bc95a5e485c2d48883c867072a0181, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_08_TeleportToVLRGButtons
-    Description: Click the Teleport button below to move in front of the VLRG Buttons
+    Description: Click the Teleport button below to move in front of the End effector
+      buttons.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: df002179846b1254fa65cd08499b61f4, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: 'S2_09_EngageVLRG   '
-    Description: Press both buttons simultaneously to engage the VLRG arm of the
-      IP Decking Tool with the Instrument Panel on the carrier
+    Description: Press both buttons simultaneously to engage the End effector of
+      the IP Decking Tool with the Instrument Panel.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: d47109486755f8b4887737eb09dc4b28, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
@@ -88,15 +87,14 @@ MonoBehaviour:
     Description: Click the Teleport button below to move near the IP Decking Manipulator
       control area.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0d8f3911f82d3a3419c11aaa43593d86, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_11_RotateToolCW
-    Description: Hold the handle, press the Rotate button, then release the handle
-      to rotate the IP Decking Tool clockwise.
+    Description: Hold the handle and release it to rotate the IP Decking Tool clockwise.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: bd8475181f3e6444fac911c3a7267730, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
@@ -104,23 +102,22 @@ MonoBehaviour:
     Description: Hold the handle, press the Traverse button, then release the handle
       to move the IP Decking Tool forward and align it with the vehicle.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 9713a14fb449a92458f95fb9b2fdafd5, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_13_TeleportToControl2
-    Description: Click the Teleport button below to move near the IP Decking Manipulator
-      control area.
+    Description: 'Click the Teleport button below to move near the IP Decking Manipulator
+      control area. '
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: da18172454497d141bbc6ae766fe9bfe, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_14_LockKnobCW
-    Description: Rotate the lock knob clockwise to lock the traverse and rotational
-      movement of the IP Decking Tool.
+    Description: Rotate the lock knob clockwise direction.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0ac9be63fe35213429b9a40f9a3efd7f, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
@@ -129,7 +126,7 @@ MonoBehaviour:
       to slide the IP Decking Tool to the right and align the Instrument Panel inside
       the vehicle.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 941dcf4131151af40b9ac5b9c142dec0, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
@@ -137,7 +134,7 @@ MonoBehaviour:
     Description: Click the Teleport button below to move near the IP Decking Manipulator
       control area.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0b2d93b6bcb233f47b695054a0fd25e4, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
@@ -145,77 +142,81 @@ MonoBehaviour:
     Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
       unit and push the I-shaft forward.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0b0203a327ddccb4c82d36e6dae2dd98, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_18_TraverseForwardSeat
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: ' Hold the handle, press theTraverse button and move the IP Decking
+      Tool forward to seat the Instrument Panel to the vehicle. '
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: eebef9ce55cf09a4c8ec50f9643d5139, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_19_RotateIShaftLiftCCW
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: Rotate the I-shaft Lift Control Knob counterclockwise, to disengage
+      the I-shaft lifting unit.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 7f48efad75bda6545a67c71a3c0de667, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_20_ConfirmOperatorReady
-    Description: Press Ok to confirm operation
+    Description: Confirm whether the other operator completed their operation.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 7ac66f5a0ba9f8442a495891c01e18cf, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_21_PressRedButtonVLRG
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: Press the red button to disengage the End effector.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: e806c7fdd97e9574db9a0ce0442db3c7, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_22_UnlockKnobCCW
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: Rotate the lock knob counterclockwise direction
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 1304e5f2bc964ff49be86fc78b6cf56b, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_23_RetractToolBackward
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: Hold the handle, press the Traverse button, and release the handle
+      to retract the IP Decking Tool backward.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 5681863cc642a3e43af107391bc903f9, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_24_SlideToolLeftPark
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: Hold the handle, press the Slide button, then release it to move
+      the IP Decking Tool to its parked position.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: b30a86dc067261a4bb3a1016e8351400, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_25_TeleportToControl2
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: Click the Teleport button below to move near the IP Decking Manipulator
+      control area.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 3140a8626a81ccd439a489b77a615b78, type: 3}
     audioDelay: 0
     isCompleted: 0
   - TaskID:
       ID: S2_26_LockKnobCW3
-    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
-      unit and push the I-shaft forward.
+    Description: Rotate the lock knob clockwise direction.
     SubTasks: []
-    AudioClip: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 26802d01574e33c49854968f0619dfbf, type: 3}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_27_completion
+    Description: Rotate the lock knob clockwise direction.
+    SubTasks: []
+    AudioClip: {fileID: 8300000, guid: 5413ce29749182a419ac5b1b196077ad, type: 3}
     audioDelay: 0
     isCompleted: 0
