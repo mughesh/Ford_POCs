@@ -14,7 +14,7 @@ public class KnobSwitchTask : Task
     [SerializeField] private Grabbable knobGrabbable; // The grabbable component
 
     [Header("Rotation Settings")]
-    [Tooltip("Target angle to rotate to when released")]
+    [Tooltip("Target angle to rotate to when released")] 
     [SerializeField] private float targetAngle = 90f;
     [Tooltip("Axis to rotate around (in local space)")]
     [SerializeField] private Vector3 rotationAxis = Vector3.up;
@@ -35,8 +35,23 @@ public class KnobSwitchTask : Task
     [Header("What to Unlock (Optional)")]
     [SerializeField] private GameObject[] objectsToUnlock;
 
+    [Header("Animations After Rotation (Optional)")]
+    [Tooltip("Animators to trigger after knob rotation completes")]
+    [SerializeField] private Animator[] animatorsToTrigger;
+    [Tooltip("Animation trigger parameter name (e.g., 'Hook_Lock')")]
+    [SerializeField] private string animationTriggerName = "Hook_Lock";
+    [Tooltip("How long to wait for animations to complete before finishing task")]
+    [SerializeField] private float animationDuration = 2f;
+    [Tooltip("Play animations after knob rotation?")]
+    [SerializeField] private bool playAnimationsAfterRotation = false;
+
+    [Header("Debug - Test Animations")]
+    [Tooltip("Enable this checkbox to test animations in Play mode (will auto-disable after triggering)")]
+    [SerializeField] private bool debugTriggerAnimations = false;
+
     [Header("Audio (Optional)")]
     [SerializeField] private AudioClip rotationSound;
+    [SerializeField] private AudioClip animationSound;
     [SerializeField] private AudioSource audioSource;
 
     [Header("Guidance (Optional)")]
@@ -77,9 +92,46 @@ public class KnobSwitchTask : Task
         }
     }
 
+    private void Update()
+    {
+        // Debug: Trigger animations when checkbox is enabled
+        if (debugTriggerAnimations)
+        {
+            debugTriggerAnimations = false; // Auto-disable after triggering
+            DebugTriggerAnimations();
+        }
+    }
+
     private void OnTaskActive(TaskID activeTaskID)
     {
         isTaskActive = (this.TaskID == activeTaskID);
+    }
+
+    private void DebugTriggerAnimations()
+    {
+        if (animatorsToTrigger == null || animatorsToTrigger.Length == 0)
+        {
+            Debug.LogWarning("KnobSwitchTask: No animators assigned for debug trigger!");
+            return;
+        }
+
+        Debug.Log("[DEBUG] Triggering animations manually...");
+
+        // Trigger animations on all animators
+        foreach (var animator in animatorsToTrigger)
+        {
+            if (animator != null)
+            {
+                animator.SetTrigger(animationTriggerName);
+                Debug.Log($"[DEBUG] Triggered animation on: {animator.gameObject.name}");
+            }
+        }
+
+        // Play animation sound
+        if (audioSource != null && animationSound != null)
+        {
+            audioSource.PlayOneShot(animationSound);
+        }
     }
 
     private void OnKnobGrabbed(Hand hand, Grabbable grabbable)
@@ -172,9 +224,41 @@ public class KnobSwitchTask : Task
         // Unlock objects
         UnlockObjects();
 
+        // Play animations after rotation if enabled
+        if (playAnimationsAfterRotation && animatorsToTrigger != null && animatorsToTrigger.Length > 0)
+        {
+            yield return StartCoroutine(PlayAnimationsAndWait());
+        }
+
         // Complete task
         taskCompleted = true;
         CompleteTask();
+    }
+
+    private IEnumerator PlayAnimationsAndWait()
+    {
+        Debug.Log($"Playing animations with trigger: {animationTriggerName}");
+
+        // Trigger animations on all animators
+        foreach (var animator in animatorsToTrigger)
+        {
+            if (animator != null)
+            {
+                animator.SetTrigger(animationTriggerName);
+                Debug.Log($"Triggered animation on: {animator.gameObject.name}");
+            }
+        }
+
+        // Play animation sound
+        if (audioSource != null && animationSound != null)
+        {
+            audioSource.PlayOneShot(animationSound);
+        }
+
+        // Wait for animations to complete
+        yield return new WaitForSeconds(animationDuration);
+
+        Debug.Log("Animations completed!");
     }
 
     private void UnlockObjects()
