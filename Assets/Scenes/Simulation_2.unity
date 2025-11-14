@@ -3355,6 +3355,37 @@ MonoBehaviour:
   movementButton: {fileID: 6454494504539601039}
   hideOnButtonPress:
   - {fileID: 23353660}
+--- !u!1 &185686311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185686312}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &185686312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185686311}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.417, y: 0.966, z: 3.135}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &187805636
 GameObject:
   m_ObjectHideFlags: 0
@@ -21022,6 +21053,8 @@ MonoBehaviour:
   - ID: S2_24_SlideToolLeftPark
   - ID: S2_26_LockKnobCW3
   hideOnTasks: []
+  hideOnGrab: 0
+  grabbable: {fileID: 0}
   enableOffsetPreview: 0
   highlightPositionOffset: {x: 0, y: 0, z: 0}
   highlightScaleOffset: {x: 1, y: 1, z: 1}
@@ -24694,7 +24727,7 @@ Transform:
   m_GameObject: {fileID: 1552201095}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -3.09, y: 1.077, z: 1.763}
+  m_LocalPosition: {x: -3.176, y: 1.077, z: 1.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -27119,7 +27152,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a69bd4842a105cd498634048a967cfe9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1050003
+      value: -3.1910005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a69bd4842a105cd498634048a967cfe9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31725,6 +31758,8 @@ MonoBehaviour:
     ID: S2_04_RotateToolCCW
   showOnTasks: []
   hideOnTasks: []
+  hideOnGrab: 0
+  grabbable: {fileID: 0}
   enableOffsetPreview: 0
   highlightPositionOffset: {x: 0, y: 0, z: 0}
   highlightScaleOffset: {x: 1, y: 1, z: 1}
@@ -31750,6 +31785,8 @@ MonoBehaviour:
     ID: S2_06_TeleportToManipulator
   showOnTasks: []
   hideOnTasks: []
+  hideOnGrab: 0
+  grabbable: {fileID: 0}
   enableOffsetPreview: 0
   highlightPositionOffset: {x: 0, y: 0, z: 0}
   highlightScaleOffset: {x: 1, y: 1, z: 1}
@@ -42783,7 +42820,7 @@ Transform:
   m_GameObject: {fileID: 2013653722744090391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.039, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43071,8 +43108,9 @@ MonoBehaviour:
   - ID: S2_18_TraverseForwardSeat
   - ID: S2_23_RetractToolBackward
   - ID: S2_24_SlideToolLeftPark
-  - ID: S2_26_LockKnobCW3
   hideOnTasks: []
+  hideOnGrab: 1
+  grabbable: {fileID: 1793576148}
   enableOffsetPreview: 0
   highlightPositionOffset: {x: 0, y: 0, z: 0}
   highlightScaleOffset: {x: 1, y: 1, z: 1}
@@ -44502,6 +44540,7 @@ SceneRoots:
   - {fileID: 1587852295}
   - {fileID: 455894561}
   - {fileID: 382355392}
+  - {fileID: 252651152}
   - {fileID: 1793576145}
   - {fileID: 520953568}
   - {fileID: 543362965}
@@ -44509,11 +44548,11 @@ SceneRoots:
   - {fileID: 2588353610297481537}
   - {fileID: 276409}
   - {fileID: 1637645866}
-  - {fileID: 252651152}
   - {fileID: 129549845}
   - {fileID: 1141199033}
   - {fileID: 583759783}
   - {fileID: 1189778711}
   - {fileID: 592648044}
   - {fileID: 425770101}
+  - {fileID: 185686312}
   - {fileID: 1659390196}

@@ -1,9 +1,10 @@
 using UnityEngine;
+using Autohand;
 
 /// <summary>
 /// Highlights a mesh during a specific task by applying highlight material
 /// Similar to arrow guidance but for mesh highlighting
-/// Enhanced: Supports multiple tasks and offset controls for positioning
+/// Enhanced: Supports multiple tasks, offset controls, and hide-on-grab option
 /// </summary>
 public class TaskHighlight : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class TaskHighlight : MonoBehaviour
     [SerializeField] private TaskID[] showOnTasks;
     [Tooltip("Leave empty to show during this task. Add task IDs to hide during specific tasks.")]
     [SerializeField] private TaskID[] hideOnTasks;
+
+    [Header("Hide Behavior")]
+    [Tooltip("Hide highlight immediately when grabbed (for grab-only steps). If unchecked, hides on task completion.")]
+    [SerializeField] private bool hideOnGrab = false;
+    [Tooltip("Grabbable component to detect grab (leave empty to auto-find on this GameObject)")]
+    [SerializeField] private Grabbable grabbable;
 
     [Header("Highlight Offset Controls (Editor Only)")]
     [Tooltip("Enable to preview and adjust highlight offset in editor")]
@@ -45,12 +52,56 @@ public class TaskHighlight : MonoBehaviour
     {
         TaskEvents.OnTaskActive += OnTaskActive;
         TaskEvents.OnTaskCompleted += OnTaskCompleted;
+
+        // Subscribe to grab if enabled
+        if (hideOnGrab)
+        {
+            SetupGrabbableEvents();
+        }
     }
 
     private void OnDisable()
     {
         TaskEvents.OnTaskActive -= OnTaskActive;
         TaskEvents.OnTaskCompleted -= OnTaskCompleted;
+
+        // Unsubscribe from grab
+        if (hideOnGrab && grabbable != null)
+        {
+            grabbable.OnGrabEvent -= OnGrabbed;
+        }
+    }
+
+    private void SetupGrabbableEvents()
+    {
+        // Auto-find grabbable if not assigned
+        if (grabbable == null)
+        {
+            grabbable = GetComponent<Grabbable>();
+            if (grabbable == null)
+            {
+                grabbable = GetComponentInChildren<Grabbable>();
+            }
+        }
+
+        // Subscribe to grab event only (not release)
+        if (grabbable != null)
+        {
+            grabbable.OnGrabEvent += OnGrabbed;
+        }
+        else
+        {
+            Debug.LogWarning($"TaskHighlight on {gameObject.name}: hideOnGrab is enabled but no Grabbable component found!");
+        }
+    }
+
+    private void OnGrabbed(Hand hand, Grabbable grabbable)
+    {
+        if (isHighlighted)
+        {
+            Debug.Log($"TaskHighlight: {gameObject.name} grabbed - hiding highlight immediately");
+            HideHighlight();
+        }
     }
 
     private void Start()
