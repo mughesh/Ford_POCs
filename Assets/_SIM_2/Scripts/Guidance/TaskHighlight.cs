@@ -3,13 +3,25 @@ using UnityEngine;
 /// <summary>
 /// Highlights a mesh during a specific task by applying highlight material
 /// Similar to arrow guidance but for mesh highlighting
+/// Enhanced: Supports multiple tasks and offset controls for positioning
 /// </summary>
 public class TaskHighlight : MonoBehaviour
 {
     [Header("Task Settings")]
+    [Tooltip("DEPRECATED: Use 'Show On Tasks' array instead. Kept for backwards compatibility.")]
     [SerializeField] private TaskID taskID;
+    [Tooltip("Show highlight when any of these tasks are active (NEW - use this instead of single taskID)")]
+    [SerializeField] private TaskID[] showOnTasks;
     [Tooltip("Leave empty to show during this task. Add task IDs to hide during specific tasks.")]
     [SerializeField] private TaskID[] hideOnTasks;
+
+    [Header("Highlight Offset Controls (Editor Only)")]
+    [Tooltip("Enable to preview and adjust highlight offset in editor")]
+    [SerializeField] private bool enableOffsetPreview = false;
+    [Tooltip("Position offset for highlight mesh")]
+    [SerializeField] private Vector3 highlightPositionOffset = Vector3.zero;
+    [Tooltip("Scale multiplier for highlight mesh")]
+    [SerializeField] private Vector3 highlightScaleOffset = Vector3.one;
 
     [Header("Highlight Settings")]
     [SerializeField] private Material highlightMaterial;
@@ -56,26 +68,90 @@ public class TaskHighlight : MonoBehaviour
             }
         }
 
-        // Start hidden
+        // Start hidden (unless in editor preview mode)
+#if UNITY_EDITOR
+        if (!enableOffsetPreview)
+        {
+            HideHighlight();
+        }
+#else
         HideHighlight();
+#endif
     }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        // Editor preview: Show/hide highlight based on checkbox
+        if (enableOffsetPreview && Application.isPlaying)
+        {
+            // In play mode with preview enabled, show highlight
+            if (!isHighlighted)
+            {
+                ShowHighlight();
+            }
+            else
+            {
+                // Update existing highlight with new offset values
+                UpdateHighlightOffset();
+            }
+        }
+        else if (!enableOffsetPreview && isHighlighted && Application.isPlaying)
+        {
+            // Preview disabled, hide highlight
+            HideHighlight();
+        }
+    }
+
+    private void UpdateHighlightOffset()
+    {
+        if (highlightObject != null)
+        {
+            highlightObject.transform.localPosition = highlightPositionOffset;
+            highlightObject.transform.localScale = highlightScaleOffset * highlightScale;
+        }
+    }
+#endif
 
     private void OnTaskActive(TaskID activeTaskID)
     {
-        // Check if this is our task
-        if (activeTaskID == this.taskID)
+        // Check if we should show highlight for this task
+        bool shouldShow = false;
+
+        // NEW: Check showOnTasks array (multiple tasks)
+        if (showOnTasks != null && showOnTasks.Length > 0)
+        {
+            foreach (var task in showOnTasks)
+            {
+                if (activeTaskID == task)
+                {
+                    shouldShow = true;
+                    break;
+                }
+            }
+        }
+        // BACKWARDS COMPATIBILITY: Check single taskID if showOnTasks is empty
+        else if (activeTaskID == this.taskID)
+        {
+            shouldShow = true;
+        }
+
+        if (shouldShow)
         {
             ShowHighlight();
         }
         else
         {
             // Check if we should hide on this task
-            foreach (var hideTask in hideOnTasks)
+            if (hideOnTasks != null)
             {
-                if (activeTaskID == hideTask)
+                foreach (var hideTask in hideOnTasks)
                 {
-                    HideHighlight();
-                    return;
+                    if (activeTaskID == hideTask)
+                    {
+                        HideHighlight();
+                        return;
+                    }
                 }
             }
         }
@@ -83,8 +159,28 @@ public class TaskHighlight : MonoBehaviour
 
     private void OnTaskCompleted(TaskID completedTaskID)
     {
-        // Hide when our task completes
-        if (completedTaskID == this.taskID)
+        // Hide when any of our tasks complete
+        bool shouldHide = false;
+
+        // NEW: Check showOnTasks array
+        if (showOnTasks != null && showOnTasks.Length > 0)
+        {
+            foreach (var task in showOnTasks)
+            {
+                if (completedTaskID == task)
+                {
+                    shouldHide = true;
+                    break;
+                }
+            }
+        }
+        // BACKWARDS COMPATIBILITY: Check single taskID
+        else if (completedTaskID == this.taskID)
+        {
+            shouldHide = true;
+        }
+
+        if (shouldHide)
         {
             HideHighlight();
         }
@@ -146,12 +242,17 @@ public class TaskHighlight : MonoBehaviour
 
     private void CreateHighlightOverlay()
     {
-        // Create a duplicate mesh with highlight material slightly scaled up
+        // Create a duplicate mesh with highlight material
         highlightObject = new GameObject($"{gameObject.name}_Highlight");
         highlightObject.transform.SetParent(transform);
-        highlightObject.transform.localPosition = Vector3.zero;
+
+        // Apply position offset
+        highlightObject.transform.localPosition = highlightPositionOffset;
         highlightObject.transform.localRotation = Quaternion.identity;
-        highlightObject.transform.localScale = Vector3.one * highlightScale;
+
+        // Apply scale: base highlightScale * custom scale offset
+        Vector3 finalScale = Vector3.Scale(Vector3.one * highlightScale, highlightScaleOffset);
+        highlightObject.transform.localScale = finalScale;
 
         // Copy mesh
         MeshFilter originalMeshFilter = GetComponent<MeshFilter>();
