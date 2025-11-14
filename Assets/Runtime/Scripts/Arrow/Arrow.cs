@@ -38,6 +38,7 @@ public class Arrow : MonoBehaviour
     {
         if (obj.Equals(taskID) && !taskPreCompleted)
             SetState(true);
+            Debug.Log("Arrow shown for task: " + taskID);
     }
     private void TaskEvents_OnTaskPreCompleted(TaskID obj)
     {

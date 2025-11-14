@@ -11,9 +11,18 @@ public class ConfirmationButtonTask : Task
     [Header("UI Canvas")]
     [SerializeField] private GameObject confirmationCanvas;
 
+    [Header("Object Detachment (Optional)")]
+    [Tooltip("Object to detach from parent after confirmation (e.g., steering deck)")]
+    [SerializeField] private Transform objectToDetach;
+    [Tooltip("Optional: New parent to assign (leave empty to make it root object)")]
+    [SerializeField] private Transform newParent;
+    [Tooltip("Should we keep world position/rotation when detaching?")]
+    [SerializeField] private bool keepWorldTransform = true;
+
     [Header("Audio (Optional)")]
     [Tooltip("Audio instruction to play when canvas appears")]
     [SerializeField] private AudioClip instructionAudio;
+    [SerializeField] private AudioClip detachSound;
     [SerializeField] private AudioSource audioSource;
 
     private bool buttonPressed = false;
@@ -95,10 +104,34 @@ public class ConfirmationButtonTask : Task
 
         Debug.Log($"Canvas hidden. Now calling CompleteTask() for TaskID: {TaskID}");
 
+        // Detach object if specified
+        DetachObject();
+
         // Complete task
         CompleteTask();
 
-        Debug.Log("CompleteTask() called successfully!");
+        Debug.Log($"CompleteTask() called successfully! TaskEvents.TaskCompleted({TaskID}) should have fired.");
+        Debug.Log("TaskManager should now activate the next task in the sequence.");
+    }
+
+    private void DetachObject()
+    {
+        if (objectToDetach == null)
+        {
+            Debug.Log("ConfirmationButtonTask: No object to detach (objectToDetach is null)");
+            return;
+        }
+
+        // Play detach sound
+        if (audioSource != null && detachSound != null)
+        {
+            audioSource.PlayOneShot(detachSound);
+        }
+
+        // Detach from parent
+        objectToDetach.SetParent(newParent, keepWorldTransform);
+
+        Debug.Log($"Detached '{objectToDetach.name}' from parent. New parent: {(newParent != null ? newParent.name : "None (root)")}");
     }
 
     public override void TriggerComplete()
