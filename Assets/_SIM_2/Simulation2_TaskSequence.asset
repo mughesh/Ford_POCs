@@ -125,9 +125,57 @@ MonoBehaviour:
     isCompleted: 0
   - TaskID:
       ID: S2_15_SlideToolRight
-    Description: "Hold the handle, press the Slide (\u2194) button, then release
-      the handle to slide the IP Decking Tool to the right and align the Instrument
-      Panel inside the vehicle."
+    Description: Hold the handle, press the Slide button, then release the handle
+      to slide the IP Decking Tool to the right and align the Instrument Panel inside
+      the vehicle.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_16_TeleportToControl3
+    Description: Click the Teleport button below to move near the IP Decking Manipulator
+      control area.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_17_RotateIShaftLiftCW
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_18_TraverseForwardSeat
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_19_RotateIShaftLiftCCW
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_20_PressOperationComplete
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_17_RotateIShaftLiftCW
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
     SubTasks: []
     AudioClip: {fileID: 0}
     audioDelay: 0
