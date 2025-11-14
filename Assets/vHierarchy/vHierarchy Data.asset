@@ -38,6 +38,9 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-678c80f8c686d9744ae459edb8aebde6-425770100-0
         - globalObjectIdString: GlobalObjectId_V1-2-678c80f8c686d9744ae459edb8aebde6-525740475-0
         - globalObjectIdString: GlobalObjectId_V1-2-678c80f8c686d9744ae459edb8aebde6-1793576144-0
+        - globalObjectIdString: GlobalObjectId_V1-2-678c80f8c686d9744ae459edb8aebde6-961907054-0
+        - globalObjectIdString: GlobalObjectId_V1-2-678c80f8c686d9744ae459edb8aebde6-8830246018817977679-0
+        - globalObjectIdString: GlobalObjectId_V1-2-678c80f8c686d9744ae459edb8aebde6-1659390195-0
         values:
         - colorIndex: 2
           iconNameOrGuid: Folder Icon
@@ -62,4 +65,10 @@ MonoBehaviour:
         - colorIndex: 2
           iconNameOrGuid: 
         - colorIndex: 2
+          iconNameOrGuid: 
+        - colorIndex: 3
+          iconNameOrGuid: 
+        - colorIndex: 3
+          iconNameOrGuid: 
+        - colorIndex: 9
           iconNameOrGuid: 
