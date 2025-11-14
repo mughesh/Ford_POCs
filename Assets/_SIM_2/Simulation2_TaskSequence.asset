@@ -165,7 +165,14 @@ MonoBehaviour:
     audioDelay: 0
     isCompleted: 0
   - TaskID:
-      ID: S2_20_PressOperationComplete
+      ID: S2_20_ConfirmOperatorReady
+    Description: Press Ok to confirm operation
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_21_PressRedButtonVLRG
     Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
       unit and push the I-shaft forward.
     SubTasks: []
@@ -173,7 +180,39 @@ MonoBehaviour:
     audioDelay: 0
     isCompleted: 0
   - TaskID:
-      ID: S2_17_RotateIShaftLiftCW
+      ID: S2_22_UnlockKnobCCW
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_23_RetractToolBackward
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_24_SlideToolLeftPark
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_25_TeleportToControl2
+    Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
+      unit and push the I-shaft forward.
+    SubTasks: []
+    AudioClip: {fileID: 0}
+    audioDelay: 0
+    isCompleted: 0
+  - TaskID:
+      ID: S2_26_LockKnobCW3
     Description: Rotate the I-shaft Lift Control Knob clockwise to activate the lifting
       unit and push the I-shaft forward.
     SubTasks: []

@@ -83,6 +83,10 @@ MonoBehaviour:
   - S2_17_RotateIShaftLiftCW
   - S2_18_TraverseForwardSeat
   - S2_19_RotateIShaftLiftCCW
-  - S2_20_PressOperationComplete
-  - S2_21_UnlockKnobCCW2
-  - S2_22_LockKnobCW3
+  - S2_20_ConfirmOperatorReady
+  - S2_21_PressRedButtonVLRG
+  - S2_22_UnlockKnobCCW
+  - S2_23_RetractToolBackward
+  - S2_24_SlideToolLeftPark
+  - S2_25_TeleportToControl2
+  - S2_26_LockKnobCW3
